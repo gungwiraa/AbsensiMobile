@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gradient1"
+    android:background="@drawable/bglogin"
     android:padding="16dp">
 
     <LinearLayout
@@ -17,7 +17,7 @@
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_gravity="center"
-            android:background="@mipmap/ic_launcher" />
+            android:background="@drawable/family" />
 
         <TextView
             android:id="@+id/TextView1"
@@ -26,8 +26,9 @@
             android:layout_gravity="center"
             android:layout_marginBottom="30dp"
             android:layout_marginTop="5dp"
-            android:text="Absensi Mobile"
-            android:textSize="18dip"
+            android:text="Monitor Anak Anda!"
+            android:textSize="20dp"
+            android:textColor="@android:color/black"
             android:textStyle="bold" />
 
 
@@ -36,13 +37,13 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
-            android:background="@color/white"
+            android:background="@drawable/gradientradius"
             android:hint="Username"
             android:inputType="textPersonName"
             android:padding="10dp"
             android:singleLine="true"
-            android:textColor="@color/input_login"
-            android:textColorHint="@color/input_login_hint" />
+            android:textColor="@android:color/white"
+            android:textColorHint="@android:color/white" />
 
 
         <EditText
@@ -50,13 +51,13 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="30dp"
-            android:background="@color/white"
+            android:background="@drawable/gradientradius"
             android:hint="@string/hint_password"
             android:inputType="textPassword"
             android:padding="10dp"
             android:singleLine="true"
-            android:textColor="@color/input_login"
-            android:textColorHint="@color/input_login_hint" />
+            android:textColor="@android:color/white"
+            android:textColorHint="@android:color/white" />
 
         <Button
             android:id="@+id/btn_login"
@@ -65,18 +66,8 @@
             android:layout_gravity="center"
             android:layout_marginBottom="15dp"
             android:text="Login"
-            android:background="#FA8072"
+            android:background="@drawable/gradientradius"
             android:textColor="#fff"
-            android:textStyle="bold" />
-
-        <Button
-            android:id="@+id/btn_register"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginBottom="15dp"
-            android:background="#00555555"
-            android:text="Register"
             android:textStyle="bold" />
 
     </LinearLayout>

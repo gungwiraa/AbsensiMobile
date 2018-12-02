@@ -21,7 +21,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".MenuUtama" />
-        <activity android:name=".EditProfile"></activity>
+        <activity android:name=".EditProfile" />
     </application>
 
 </manifest>

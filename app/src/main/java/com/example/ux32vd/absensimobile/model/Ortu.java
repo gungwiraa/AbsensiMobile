@@ -1,4 +1,4 @@
-package com.example.ux32vd.absensimobile;
+package com.example.ux32vd.absensimobile.model;
 
 public class Ortu{
 	private String nama;
