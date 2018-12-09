@@ -10,6 +10,8 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -28,16 +30,15 @@ public class MenuUtama extends AppCompatActivity implements NavigationView.OnNav
     //APIService
     APIService service;
 
-    //NavDrawer
-    private DrawerLayout mDrawerLayout;
-    private ActionBarDrawerToggle mToggle;
-
+    //NavDrawer & Recyclerview
+    DrawerLayout mDrawerLayout;
+    ActionBarDrawerToggle mToggle;
+    NavigationView navigationView;
+    RecyclerView mRecyclerView;
 
     public Button btn_logout;
-    public TextView txt_token, txt_username, txt_nama, txt_token_nav, txt_username_nav, txt_nama_nav;
+    public TextView txt_token, txt_username, txt_nama, txt_nama_mhs, txt_kelas, txt_token_nav, txt_username_nav, txt_nama_nav;
     //String id, username, nama;
-    NavigationView navigationView;
-
 
 //    public static final String TAG_ID = "id";
 //    public static final String TAG_USERNAME = "username";
@@ -48,6 +49,9 @@ public class MenuUtama extends AppCompatActivity implements NavigationView.OnNav
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_utama);
 
+        mRecyclerView = findViewById(R.id.RecyclerViewRiwayat);
+        mRecyclerView.setHasFixedSize(true);
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         mDrawerLayout = findViewById(R.id.navigation_main);
         mToggle = new ActionBarDrawerToggle(this, mDrawerLayout, R.string.open, R.string.close);
@@ -88,7 +92,6 @@ public class MenuUtama extends AppCompatActivity implements NavigationView.OnNav
         txt_username.setText(username);
 
         btn_logout = findViewById(R.id.btn_logout);
-
         btn_logout.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -107,6 +110,7 @@ public class MenuUtama extends AppCompatActivity implements NavigationView.OnNav
             }
         });
     }
+
 
 
     @Override
@@ -139,6 +143,9 @@ public class MenuUtama extends AppCompatActivity implements NavigationView.OnNav
         getMenuInflater().inflate(R.menu.drawermenu, menu);
         return true;
     }
+
+
+
 
 }
 //        txt_id = (TextView) findViewById(R.id.txt_id);

@@ -77,19 +77,33 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginBottom="15dp"
+            android:layout_marginBottom="10dp"
             android:background="@drawable/gradientradius"
             android:textColor="#fff"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="15dp"
             android:text="Logout"
             android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center" >
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/RecyclerViewRiwayat"
+                android:layout_width="match_parent"
+                android:layout_height="425dp">
+            </android.support.v7.widget.RecyclerView>
+
+        </LinearLayout>
 
     </LinearLayout>
 
 
     <android.support.design.widget.NavigationView
         app:headerLayout="@layout/header"
-        android:layout_width="180dp"
+        android:layout_width="300dp"
         android:layout_height="match_parent"
         android:background="@drawable/bglogin"
         app:itemTextColor="@android:color/black"

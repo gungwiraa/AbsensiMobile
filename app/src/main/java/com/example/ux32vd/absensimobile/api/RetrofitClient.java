@@ -7,7 +7,7 @@ public class RetrofitClient {
 
     public static APIService getService(){
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://10.0.2.2:8000/api/")
+                .baseUrl("https://serene-dawn-16804.herokuapp.com/api/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         return retrofit.create(APIService.class);

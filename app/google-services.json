@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "701140311592",
+    "firebase_url": "https://absensimobile-74d3d.firebaseio.com",
+    "project_id": "absensimobile-74d3d",
+    "storage_bucket": "absensimobile-74d3d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:701140311592:android:e4da1ae9f4d16e84",
+        "android_client_info": {
+          "package_name": "com.example.ux32vd.absensimobile"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "701140311592-o15l7mkl75e51sttioiqeqtorh53imqp.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.ux32vd.absensimobile",
+            "certificate_hash": "995546e6630aa369bcf0c014112b899bd9ccef6b"
+          }
+        },
+        {
+          "client_id": "701140311592-655nnaatl6chle3esuf15fu0pm2jv4od.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDPNPW8zm9ijfXb4YGt_0FfmvkJxOWPh2k"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "701140311592-655nnaatl6chle3esuf15fu0pm2jv4od.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

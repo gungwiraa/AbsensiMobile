@@ -38,7 +38,7 @@ public class MenuLogin extends AppCompatActivity {
     //API Service
     APIService service;
 
-    //ProgressDialog pDialog;
+    ProgressDialog pDialog;
     protected Button btn_register, btn_login;
     protected EditText txt_username, txt_password;
     //Intent intent;
@@ -86,6 +86,9 @@ public class MenuLogin extends AppCompatActivity {
         txt_username = (EditText) findViewById(R.id.txt_username);
         txt_password = (EditText) findViewById(R.id.txt_password);
 
+        pDialog = new ProgressDialog(this);
+        pDialog.setCancelable(false);
+
         // Cek session login jika TRUE maka langsung buka MainActivity
 //        sharedpreferences = getSharedPreferences(my_shared_preferences, Context.MODE_PRIVATE);
 //        session = sharedpreferences.getBoolean(session_status, false);
@@ -108,13 +111,17 @@ public class MenuLogin extends AppCompatActivity {
                 // TODO Auto-generated method stub
                 String username = txt_username.getText().toString();
                 String password = txt_password.getText().toString();
+                pDialog.setMessage("Logging in ...");
+                showDialog();
 
                 service.saveLogin(username, password)
                         .enqueue(new Callback<com.example.ux32vd.absensimobile.model.Response>() {
                             @Override
                             public void onResponse(Call<com.example.ux32vd.absensimobile.model.Response> call, retrofit2.Response<com.example.ux32vd.absensimobile.model.Response> response) {
+
                                 if (response.isSuccessful()) {
                                     Toast.makeText(MenuLogin.this, "Sukses", Toast.LENGTH_LONG).show();
+                                    hideDialog();
 
                                     SharedPreferences sharedPreferences = getSharedPreferences("dataOrtu", MODE_PRIVATE);
                                     SharedPreferences.Editor editor = sharedPreferences.edit();
@@ -138,6 +145,7 @@ public class MenuLogin extends AppCompatActivity {
                             }
                         });
 
+
                 // mengecek kolom yang kosong
 //                if (username.trim().length() > 0 && password.trim().length() > 0) {
 //                    if (conMgr.getActiveNetworkInfo() != null
@@ -156,14 +164,6 @@ public class MenuLogin extends AppCompatActivity {
 
 //        btn_register.setOnClickListener(new View.OnClickListener() {
 //
-//            @Override
-//            public void onClick(View v) {
-//                // TODO Auto-generated method stub
-//                intent = new Intent(MenuLogin.this, EditProfile.class);
-//                finish();
-//                startActivity(intent);
-//            }
-//        });
 //
 //    }
 //
@@ -246,14 +246,16 @@ public class MenuLogin extends AppCompatActivity {
 //        Controller.getInstance().addToRequestQueue(strReq, tag_json_obj);
 //    }
 //
-//    private void showDialog() {
-//        if (!pDialog.isShowing())
-//            pDialog.show();
-//    }
-//
-//    private void hideDialog() {
-//        if (pDialog.isShowing())
-//            pDialog.dismiss();
-//    }
     }
+
+    private void showDialog() {
+        if (!pDialog.isShowing())
+            pDialog.show();
+    }
+
+    private void hideDialog() {
+        if (pDialog.isShowing())
+            pDialog.dismiss();
+    }
+
 }
